@@ -3,14 +3,37 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node app.js",
+    "tsc": "tsc"
   },
   "dependencies": {
+    "@types/es6-shim": "^0.31.37",
+    "@types/express": "^4.11.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
-    "morgan": "~1.9.0"
+    "morgan": "~1.9.0",
+    "uglify-js": "^3.3.28"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharlieRoseMarie/GenericClickerGame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CharlieRoseMarie/GenericClickerGame/issues"
+  },
+  "homepage": "https://github.com/CharlieRoseMarie/GenericClickerGame#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/jquery": "^3.3.2",
+    "gulp": "^4.0.0",
+    "jquery": "^3.3.1",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.4"
   }
 }
