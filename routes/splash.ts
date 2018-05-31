@@ -1,10 +1,9 @@
-import {Router, Request, Response} from "express";
+import {Request, Response, Router} from "express";
 
-const router : Router = Router();
+const router: Router = Router();
 
-router.get('/', (req : Request, res : Response) =>
-{
-  res.send('Hello, world!');
+router.get("/", (req: Request, res: Response) => {
+  res.send("Hello, world!");
 });
 
-export const SplashController : Router = router;
+export const SplashController: Router = router;

@@ -1,11 +1,12 @@
-import * as express from 'express';
-import {SplashController} from "./routes";
+import * as express from "express";
+import {SplashController, IndexController} from "./routes";
 
-const app : express.Application() = express();
-const port : number = process.env.PORT || 3000;
+const app: express.Application = express();
+const port: number = 3000;
 
-app.use('/splash', SplashController);
+app.use("/splash", SplashController);
+app.use("/", IndexController);
 app.listen(port, () =>
 {
-  console.log('Listening at http://localhost:${port}');
+
 });
