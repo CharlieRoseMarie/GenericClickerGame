@@ -8,5 +8,4 @@ router.get("/", (req: Request, res: Response) => {
 
 export const IndexController : Router = router;
 
-export * from "./splash";
 export * from "./index";
