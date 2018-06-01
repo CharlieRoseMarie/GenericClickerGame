@@ -1,6 +1,5 @@
 /bin
 /dist
 /node_modules
-*.js
 /build
 .vs/
