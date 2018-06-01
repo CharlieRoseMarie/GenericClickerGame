@@ -6,6 +6,7 @@ var tsify = require("tsify");
 var del = require("del");
 var vinylPaths = require("vinyl-paths");
 var typescript = require("gulp-typescript");
+var nodemon = require("gulp-nodemon");
 
 var sources = {
     views: "app/**/*.jade",
@@ -54,6 +55,11 @@ gulp.task("copy-css", function() {
         .pipe(gulp.dest(sources.dist));
 });
 
+gulp.task('watch', function() {
+    gulp.watch(sources.views, gulp.series('copy-views'));
+    gulp.watch(sources.css, gulp.series('copy-css'));
+});
+
 gulp.task("build", function() {
     return browserify(bowserifySettings)
         .plugin(tsify)
@@ -62,5 +68,16 @@ gulp.task("build", function() {
         .pipe(gulp.dest(sources.dist));
 });
 
+gulp.task("start-server", function(done) {
+    nodemon({
+        script: 'dist/bin/www.js',
+        env: {"NODE_ENV": "development"}
+    });
+});
+
 gulp.task("default",  
-    gulp.series("clean", gulp.parallel("build-server", "build", "copy-views", "copy-css", "copy-scripts")));
+    gulp.series(
+        "clean", 
+        gulp.parallel("build-server", "build", "copy-views", "copy-css", "copy-scripts"), 
+        "start-server",
+        "watch"));
