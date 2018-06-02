@@ -37,6 +37,11 @@
     "browserify": "^16.2.2",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
+<<<<<<< Updated upstream
+=======
+    "gulp-less": "^3.5.0",
+    "gulp-nodemon": "^2.2.1",
+>>>>>>> Stashed changes
     "gulp-typescript": "^4.0.2",
     "tsify": "^4.0.0",
     "typescript": "^2.8.4",

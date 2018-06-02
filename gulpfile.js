@@ -6,6 +6,11 @@ var tsify = require("tsify");
 var del = require("del");
 var vinylPaths = require("vinyl-paths");
 var typescript = require("gulp-typescript");
+<<<<<<< Updated upstream
+=======
+var nodemon = require("gulp-nodemon");
+var less = require("gulp-less");
+>>>>>>> Stashed changes
 
 var sources = {
     views: "app/**/*.jade",
@@ -13,7 +18,7 @@ var sources = {
     serverMain: "app/app.ts",
     bin: "app/bin/www.*",
     scripts: "app/public/**/*.js",
-    css: "app/**/*.css",
+    less: "app/**/*.less",
     binDist: "dist/bin/www"
 };
 
@@ -50,7 +55,8 @@ gulp.task("copy-scripts", function() {
 
 gulp.task("copy-css", function() {
     return gulp
-        .src(sources.css)
+        .src(sources.less)
+        .pipe(less())
         .pipe(gulp.dest(sources.dist));
 });
 
@@ -63,4 +69,11 @@ gulp.task("build", function() {
 });
 
 gulp.task("default",  
+<<<<<<< Updated upstream
     gulp.series("clean", gulp.parallel("build-server", "build", "copy-views", "copy-css", "copy-scripts")));
+=======
+    gulp.series(
+        "clean", 
+        gulp.parallel("build-server", "build", "copy-views", "copy-css", "copy-scripts") 
+        ));
+>>>>>>> Stashed changes
