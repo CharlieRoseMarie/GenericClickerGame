@@ -7,10 +7,7 @@ var del = require("del");
 var vinylPaths = require("vinyl-paths");
 var typescript = require("gulp-typescript");
 var nodemon = require("gulp-nodemon");
-<<<<<<< HEAD
-=======
 var less = require("gulp-less");
->>>>>>> master
 
 var sources = {
     views: "app/**/*.jade",
@@ -83,11 +80,6 @@ gulp.task("start-server", function(done) {
 gulp.task("default",  
     gulp.series(
         "clean", 
-<<<<<<< HEAD
         gulp.parallel("build-server", "build", "copy-views", "copy-css", "copy-scripts"), 
         "start-server",
         "watch"));
-=======
-        gulp.parallel("build-server", "build", "copy-views", "copy-css", "copy-scripts") 
-        ));
->>>>>>> master
