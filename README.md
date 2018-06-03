@@ -28,3 +28,15 @@ npm start
 ```
 
 To access the website, just point your browser to: *localhost:3000*
+
+
+## Browser Sync
+
+Building and restarting the server for every change is tedius and annoying. For rapid development,
+if you are only working on files in `app/engine`, `app/public`, or `app/views`, a utility method is available that will start the server, and update your browser with the latest changes.
+
+```
+npm run gulp start-server
+```
+
+This will run the server, open a browser windows, and reload files in the above folders which have changed, then refresh your browser. Neat, eh?
