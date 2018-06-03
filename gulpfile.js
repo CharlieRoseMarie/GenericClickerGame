@@ -6,11 +6,8 @@ var tsify = require("tsify");
 var del = require("del");
 var vinylPaths = require("vinyl-paths");
 var typescript = require("gulp-typescript");
-<<<<<<< Updated upstream
-=======
 var nodemon = require("gulp-nodemon");
 var less = require("gulp-less");
->>>>>>> Stashed changes
 
 var sources = {
     views: "app/**/*.jade",
@@ -69,11 +66,7 @@ gulp.task("build", function() {
 });
 
 gulp.task("default",  
-<<<<<<< Updated upstream
-    gulp.series("clean", gulp.parallel("build-server", "build", "copy-views", "copy-css", "copy-scripts")));
-=======
     gulp.series(
         "clean", 
         gulp.parallel("build-server", "build", "copy-views", "copy-css", "copy-scripts") 
         ));
->>>>>>> Stashed changes
