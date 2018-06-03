@@ -7,6 +7,10 @@ var del = require("del");
 var vinylPaths = require("vinyl-paths");
 var typescript = require("gulp-typescript");
 var nodemon = require("gulp-nodemon");
+<<<<<<< HEAD
+=======
+var less = require("gulp-less");
+>>>>>>> master
 
 var sources = {
     views: "app/**/*.jade",
@@ -14,7 +18,7 @@ var sources = {
     serverMain: "app/app.ts",
     bin: "app/bin/www.*",
     scripts: "app/public/**/*.js",
-    css: "app/**/*.css",
+    less: "app/**/*.less",
     binDist: "dist/bin/www"
 };
 
@@ -51,7 +55,8 @@ gulp.task("copy-scripts", function() {
 
 gulp.task("copy-css", function() {
     return gulp
-        .src(sources.css)
+        .src(sources.less)
+        .pipe(less())
         .pipe(gulp.dest(sources.dist));
 });
 
@@ -78,6 +83,11 @@ gulp.task("start-server", function(done) {
 gulp.task("default",  
     gulp.series(
         "clean", 
+<<<<<<< HEAD
         gulp.parallel("build-server", "build", "copy-views", "copy-css", "copy-scripts"), 
         "start-server",
         "watch"));
+=======
+        gulp.parallel("build-server", "build", "copy-views", "copy-css", "copy-scripts") 
+        ));
+>>>>>>> master
