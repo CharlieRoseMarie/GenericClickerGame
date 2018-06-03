@@ -32,7 +32,7 @@ var bowserifySettings = {
     packageCache: {}
 };
 
-var assetCompilation = ["build", "copy-views", "copy-css", "copy-scripts"];
+var assetCompilation = ["build-engine", "copy-views", "copy-css", "copy-scripts"];
 
 gulp.task("build-server", function() {
     var tsProject = typescript.createProject('tsconfig.json');
@@ -76,8 +76,9 @@ gulp.task('watch', function() {
     gulp.watch(sources.css, gulp.series('copy-css'));
 });
 
-gulp.task("build", function() {
-    return browserify(bowserifySettings)
+gulp.task("build-engine", function() {
+    return browserify()
+        .add("app/engine/main.ts")
         .plugin(tsify)
         .bundle()
         .pipe(source('GameEngine.js'))
