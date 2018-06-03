@@ -25,8 +25,7 @@ var sources = {
 };
 
 var bowserifySettings = {
-    baseDir: "app/engine",
-    enties: "main.js",
+    entries: "app/engine/main.ts",
     debug: true,
     cache: {},
     packageCache: {}
@@ -77,8 +76,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task("build-engine", function() {
-    return browserify()
-        .add("app/engine/main.ts")
+    return browserify(bowserifySettings)
         .plugin(tsify)
         .bundle()
         .pipe(source('GameEngine.js'))
@@ -98,7 +96,7 @@ gulp.task("start-server", function(done) {
             changedFiles.forEach(function(file) {
                 if(path.extname(file) == ".js" && !~tasks.indexOf('copy-scripts')) tasks.push('copy-scripts');
                 if(path.extname(file) == ".jade" && !~tasks.indexOf('copy-views')) tasks.push('copy-views');
-                if(path.extname(file) == ".ts" && !~tasks.indexOf('build')) tasks.push('build');
+                if(path.extname(file) == ".ts" && !~tasks.indexOf('build-engine')) tasks.push('build-engine');
                 if(path.extname(file) == ".less" && !~tasks.indexOf('copy-css')) tasks.push('copy-css');
             });
             return tasks;
