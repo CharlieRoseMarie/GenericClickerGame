@@ -8,6 +8,7 @@ export namespace App {
     app.set('view engine', 'jade');
 
     app.use(express.static(__dirname + '/public'));
+    app.use(express.static(__dirname + '/engine'));
     app.use(express.json());
     app.use(express.urlencoded({extended : false}));
 

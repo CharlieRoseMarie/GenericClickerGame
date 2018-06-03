@@ -3,7 +3,7 @@ import {Request, Response, Router} from "express";
 const router: Router = Router();
 
 router.get("/", (req: Request, res: Response) => {
-  res.render("index", { title: "Express" });
+  res.render("clicker/clicker");
 });
 
 export const IndexController : Router = router;

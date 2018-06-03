@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h1 Generic Clicker Game!
+  div(class='container')
+    div(class='row')
+      div(class='col-8')
+        input(type="button" class="btn btn-default" value="Click Me!")
+      div(class="col-4")
+        span(id="Count") 0
+  script(type="text/javascript" src="/engine/GameEngine.js")
