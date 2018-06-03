@@ -10,4 +10,12 @@ export class GameElements {
     { 
         return $("#count")
     }
+
+    public static get Save(): JQuery {
+        return $("#save");
+    }
+
+    public static get Load(): JQuery {
+        return $("#load");
+    }
 }

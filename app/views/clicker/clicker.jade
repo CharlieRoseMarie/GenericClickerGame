@@ -4,8 +4,12 @@ block content
   h1 Generic Clicker Game!
   div(class='container')
     div(class='row')
-      div(class='col-8')
+      div(class='col-2')
         input(type="button" id="clicker" class="btn btn-default" value="Click Me!")
+      div(class='col-2')
+        input(type="button" id="save" class="btn btn-default" value="Save")
+      div(class='col-2')
+        input(type="button" id="load" class="btn btn-default" value="Load")
       div(class="col-4")
         span(id="count") 0
   script(type="text/javascript" src="/engine/GameEngine.js")
